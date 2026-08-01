@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-50 text-ink-900 font-body antialiased;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255, 182, 207, 0.18) 0 3px, transparent 4px),
+      radial-gradient(circle at 88% 72%, rgba(216, 180, 254, 0.16) 0 3px, transparent 4px),
+      radial-gradient(circle at 50% 90%, rgba(255, 214, 227, 0.12) 0 4px, transparent 6px);
+    background-size: 220px 220px, 260px 260px, 320px 320px;
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-rose-200 text-ink-900;
+  }
+}
+
+@layer components {
+  .nk-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-4xl shadow-soft border border-rose-100;
+  }
+  .nk-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-display font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-rose-300 focus:ring-offset-2 focus:ring-offset-cream-50;
+  }
+  .nk-btn-primary {
+    @apply nk-btn bg-rose-500 text-white hover:bg-rose-600 shadow-soft hover:shadow-fluffy active:scale-95;
+  }
+  .nk-btn-ghost {
+    @apply nk-btn bg-white/70 text-ink-700 hover:bg-rose-50 border border-rose-100 active:scale-95;
+  }
+  .nk-btn-soft {
+    @apply nk-btn bg-rose-100 text-rose-700 hover:bg-rose-200 active:scale-95;
+  }
+  .nk-input {
+    @apply w-full rounded-2xl border border-rose-100 bg-white/80 px-4 py-3 text-ink-900 placeholder-ink-400 shadow-innersoft focus:border-rose-300 focus:ring-2 focus:ring-rose-200 focus:outline-none transition;
+  }
+  .nk-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-display font-medium;
+  }
+  .nk-link {
+    @apply text-ink-700 hover:text-rose-600 transition-colors;
+  }
+  .nk-section {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .nk-stitch-divider {
+    @apply w-full h-4 opacity-50;
+    background-image: repeating-linear-gradient(90deg, transparent 0 10px, currentColor 10px 14px, transparent 14px 24px);
+    background-size: 24px 4px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-rose-200 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-rose-300;
+}
